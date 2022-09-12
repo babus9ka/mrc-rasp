@@ -1,6 +1,6 @@
 <?php
 require 'simple_html_dom.php';
-class Api{
+class Scrap{
 
     function scraping_generic($url, $search) {
         $return = false;
@@ -11,11 +11,11 @@ class Api{
         unset($html);
         http_response_code(200);
         return $return;
-    }
-    
-        
+    }     
       
 }
 
-$new = new Api();
-echo $new->scraping_generic('https://mrk-bsuir.by/ru', '#rasp[href]');
+$new = new Scrap();
+$data =  $new->scraping_generic('https://mrk-bsuir.by/ru', '#rasp[href]');
+header('Content-Type: application/json; charset=utf-8');
+echo json_encode($data);
