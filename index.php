@@ -6,7 +6,7 @@ class Scrap{
         $return = false;
         $html = file_get_html($url);
         foreach($html->find('a#rasp') as $e) 
-            $return = $e->href . '<br>';
+            $return = $e->href;
         $html->clear();
         unset($html);
         http_response_code(200);
