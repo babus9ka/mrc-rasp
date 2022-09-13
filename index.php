@@ -18,4 +18,5 @@ class Scrap{
 $new = new Scrap();
 $data =  $new->scraping_generic('https://mrk-bsuir.by/ru', '#rasp[href]');
 header('Content-Type: application/json; charset=utf-8');
+header('Access-Control-Allow-Origin: *');
 echo json_encode($data);
