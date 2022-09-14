@@ -6,11 +6,11 @@ class Scrap{
         $return = array();
         $html = file_get_html($url);
         foreach($html->find('a#rasp') as $e) 
-            $return[] = ["rasp" => $e->href];
+            $return[] = ["schedule" => $e->href];
 
         foreach($html->find('a#rasp_old') as $e)
-            $return[] = ["rasp_old" => $e->href];
-            
+            $return[] = ["schedule_old" => $e->href];
+
         $html->clear();
         unset($html);
         http_response_code(200);
