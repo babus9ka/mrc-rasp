@@ -36,7 +36,7 @@ for ($i = 0; $i < count($data['data']); $i++){
     unset($data['data'][$i]['content'][1]);
     $data['data'][$i]['content'] = $text;
 }
-echo'<pre>';
-var_dump($data);
-echo'</pre>';
+$data = json_encode($data);
+echo $data;
+
 // echo json_encode($data, JSON_UNESCAPED_UNICODE);
