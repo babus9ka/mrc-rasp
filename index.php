@@ -25,8 +25,12 @@ $new = new Scrap();
 $data =  $new->scraping_generic('https://mrk-bsuir.by/ru');
 
 $data = array("data" => $data);
- header('Content-Type: application/json; charset=utf-8');
+ 
  header('Access-Control-Allow-Origin: *');
+ header('Access-Control-Allow-Headers: *');
+ header('Access-Control-Allow-Methods: *');
+ header('Access-Control-Allow-Credentials: true');
+header('Content-Type: application/json; charset=utf-8');
 
 for ($i = 0; $i < count($data['data']); $i++){
     $content = $data['data'][$i]['content'][1]; 
